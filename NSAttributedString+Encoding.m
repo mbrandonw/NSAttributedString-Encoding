@@ -49,9 +49,10 @@ const struct NSAttributedStringArchiveKeys NSAttributedStringArchiveKeys = {
     NSString *string = [dictionary objectForKey:NSAttributedStringArchiveKeys.rootString];
     NSMutableAttributedString *retVal = [[NSMutableAttributedString alloc] initWithString:string];
     
-    [[dictionary arrayForKey:NSAttributedStringArchiveKeys.attributes] enumerateObjectsUsingBlock:^(NSDictionary *attribute, NSUInteger idx, BOOL *stop) {
+    NSArray *attributes = [dictionary objectForKey:NSAttributedStringArchiveKeys.attributes];
+    [attributes enumerateObjectsUsingBlock:^(NSDictionary *attribute, NSUInteger idx, BOOL *stop) {
         
-        NSDictionary *attributeDictionary = [attribute dictionaryForKey:NSAttributedStringArchiveKeys.attributeDictionary];
+        NSDictionary *attributeDictionary = [attribute objectForKey:NSAttributedStringArchiveKeys.attributeDictionary];
         NSRange range = NSRangeFromString([attribute objectForKey:NSAttributedStringArchiveKeys.attributeRange]);
         
         [attributeDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id attr, BOOL *stop) {
