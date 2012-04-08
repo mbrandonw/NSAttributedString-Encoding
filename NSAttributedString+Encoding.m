@@ -107,7 +107,7 @@ const struct NSAttributedStringArchiveKeys NSAttributedStringArchiveKeys = {
                 
                 CTParagraphStyleRef paragraphStyleRef = CTParagraphStyleCreate(settings, [attr count]);
                 
-                [retVal addAttribute:key value:(__bridge id)paragraphStyleRef range:range];
+                [retVal addAttribute:key value:(__bridge_transfer id)paragraphStyleRef range:range];
             }
             else if([key isEqualToString:(NSString*)kCTGlyphInfoAttributeName])
             {
