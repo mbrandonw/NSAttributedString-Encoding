@@ -13,5 +13,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   
   s.frameworks = 'CoreText'
+
+  s.dependency do |p|
+    p.name = 'OPCoreText'
+    p.source = { :git => 'https://github.com/mbrandonw/OPCoreText' }
+    p.source_files = '*.{h,m}'
+    p.frameworks = 'CoreText'
+  end
   
 end
