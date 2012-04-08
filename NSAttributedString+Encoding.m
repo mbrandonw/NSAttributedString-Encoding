@@ -68,7 +68,8 @@ const struct NSAttributedStringArchiveKeys NSAttributedStringArchiveKeys = {
                     [key isEqualToString:(NSString*)kCTLigatureAttributeName] ||
                     [key isEqualToString:(NSString*)kCTSuperscriptAttributeName] ||
                     [key isEqualToString:(NSString*)kCTUnderlineStyleAttributeName] ||
-                    [key isEqualToString:(NSString*)kCTCharacterShapeAttributeName])
+                    [key isEqualToString:(NSString*)kCTCharacterShapeAttributeName] ||
+                    [key isEqualToString:(NSString*)kCTVerticalFormsAttributeName])
             {
                 [retVal addAttribute:key value:attr range:range];
             }
@@ -116,7 +117,6 @@ const struct NSAttributedStringArchiveKeys NSAttributedStringArchiveKeys = {
             {
                 // TODO
             }
-            
         }];
         
     }];
@@ -154,7 +154,8 @@ const struct NSAttributedStringArchiveKeys NSAttributedStringArchiveKeys = {
                     [key isEqualToString:(NSString*)kCTLigatureAttributeName] ||
                     [key isEqualToString:(NSString*)kCTSuperscriptAttributeName] ||
                     [key isEqualToString:(NSString*)kCTUnderlineStyleAttributeName] ||
-                    [key isEqualToString:(NSString*)kCTCharacterShapeAttributeName])
+                    [key isEqualToString:(NSString*)kCTCharacterShapeAttributeName] ||
+                    [key isEqualToString:(NSString*)kCTVerticalFormsAttributeName])
             {
                 [attributeDictionary setObject:attr forKey:key];
             }
